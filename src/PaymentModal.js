@@ -26,7 +26,9 @@ const PaymentModal = ({ visible, onCancel }) => {
   const [paymentOption, setPaymentOption] = useState('self')
   const [loading, setLoading] = useState(false)
   const [paymentStatus, setPaymentStatus] = useState(null)
-    const [text, setText] = React.useState('https://ant.design/')
+    const [text, setText] = React.useState(
+      'https://paybeam.vercel.app/invoices'
+    )
 
 
   const steps = [

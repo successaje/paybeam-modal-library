@@ -32,7 +32,12 @@ Import and integrate the modal component into your project:
 
 ```tsx
 import PayBeamModal from 'paybeam-modal-library';
+import React from 'react' // Import Ant Design styles
+ import styles from './styles.module.css'
+ import 'antd/dist/reset.css'; 
 
+import PaymentModal from './PaymentModal'
+export default PaymentModal
 const PaymentPage = () => {
   return (
     <PayBeamModal
