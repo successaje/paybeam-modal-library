@@ -7,7 +7,9 @@ import {
   Input,
   Radio,
   Progress,
-  message
+  message,
+  QRCode,
+  Space
 } from 'antd'
 import {
   DollarOutlined,
@@ -24,6 +26,8 @@ const PaymentModal = ({ visible, onCancel }) => {
   const [paymentOption, setPaymentOption] = useState('self')
   const [loading, setLoading] = useState(false)
   const [paymentStatus, setPaymentStatus] = useState(null)
+    const [text, setText] = React.useState('https://ant.design/')
+
 
   const steps = [
     {
@@ -58,6 +62,20 @@ const PaymentModal = ({ visible, onCancel }) => {
             </Radio.Group>
           </Form.Item>
         </Form>
+      )
+    },
+    {
+      title: 'Share to Payer',
+      content: (
+        <Space direction='vertical' align='center'>
+          <QRCode value={text || '-'} />
+          <Input
+            placeholder='-'
+            maxLength={60}
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+        </Space>
       )
     },
     {
